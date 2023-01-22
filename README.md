@@ -1,6 +1,6 @@
 <img src="https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/working-thermometer.gif" alt="Thermometer Implementation" width="600"/>
 
-Play with it [here](https://polite-zabaione-ca7da6.netlify.app/)
+<b>Play with it [here](https://polite-zabaione-ca7da6.netlify.app/).</b>
 
 # Process Dynamics Control
 
