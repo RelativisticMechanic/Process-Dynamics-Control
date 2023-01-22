@@ -68,7 +68,9 @@ The project is made using Visual Studio 2022.
 
 - [```main.cpp```](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/Process-Dynamics-Control/main.cpp): The main file of the application.
 
-Here's a nice visualization of how the program's mainloop functions, as a Chemical Engineering, a process flow diagram is perhaps the most fun thing to make:
+- [```olc_stub.cpp```](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/Process-Dynamics-Control/olc_stub.cpp): This is a stub for the olcPixelGameEngine which defines the ```OLC_PGE_APPLICATION``` to allow the header file to define certain static functions which would otherwise be redefined in every include.
+
+Here's a nice visualization of how the program's mainloop functions, as Chemical Engineers, a process flow diagram is perhaps the most fun thing to make:
 
 ![Program Process Flow Diagram](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/pdc-program-pfd.png)
 
