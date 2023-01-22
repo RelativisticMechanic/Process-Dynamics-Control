@@ -70,6 +70,14 @@ Here's a nice visualization of how the program's mainloop functions, as a Chemic
 
 ![Program Process Flow Diagram](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/pdc-program-pfd.png)
 
-## Part III: Extending the project further
+## Part IV: Extending the project further
 
 This project can be extended a lot further. One could easily incorporate other kinds of systems into it, as both the TimePlot class and the RungeKutta4 differential equation solver are highly extendable. As I progress through this course, I shall add more systems other than just the Thermometer implementation.
+
+## Part III: Compilation
+
+The project can be compiled using Visual Studio 2022. Or one can also use [Emscripten](https://emscripten.org/docs/getting_started/downloads.html) to compile it for the web. I have compiled the application and deployed it to: [https://polite-zabaione-ca7da6.netlify.app/](https://polite-zabaione-ca7da6.netlify.app/)
+
+To compile for Emscripten, run:
+
+```em++ ./main.cpp ./olc_stub.cpp ./TimePlot.cpp ./Graph2D.cpp ./RungeKutta4.cpp -std=c++17 -O0 -s ALLOW_MEMORY_GROWTH=1 -s MAX_WEBGL_VERSION=2 -s MIN_WEBGL_VERSION=2 -s USE_LIBPNG=1 -o index.html```
