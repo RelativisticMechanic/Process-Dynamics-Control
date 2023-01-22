@@ -65,3 +65,7 @@ The project is made using Visual Studio 2022.
 - [```Thermometer.h```](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/Process-Dynamics-Control/Thermometer.h): An implementation of a simple thermometer described above.
 
 - [```main.cpp```](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/Process-Dynamics-Control/main.cpp): The main file of the application.
+
+## Part III: Extending the project further
+
+This project can be extended a lot further. One could easily incorporate other kinds of systems into it, as both the TimePlot class and the RungeKutta4 differential equation solver are highly extendable. As I progress through this course, I shall add more systems other than just the Thermometer implementation.
