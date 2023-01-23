@@ -1,5 +1,7 @@
 <img src="https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/working-thermometer.gif" alt="Thermometer Implementation" width="600"/>
 
+<b>Play with it [here](https://polite-zabaione-ca7da6.netlify.app/).</b>
+
 # Process Dynamics Control
 
 This is a C++ application that implements a way to simulate and show process dynamics in C++. It was created in the January of 2023 by me as a way to understand the course [CH3310 (Process Dynamics and Control)](https://website.nitrkl.ac.in/Academics/AcademicDepartments/SyllabiDetails.aspx?d=Q0g6Q2hlbWljYWwgRW5naW5lZXJpbmc=-dmhpvpMkqIU=&di=Ng==-dYSTlPCIpzE=&c=Q2hlbWljYWwgRW5naW5lZXJpbmcgKEIuVGVjaC4gLSA0eXJzKQ==-Qpv4BN16nww=&t=VUc=-/CGGPdtU1IU=&s=NjgwNg%3d%3d-cO7ZMP8ekjo%3d).
@@ -66,13 +68,11 @@ The project is made using Visual Studio 2022.
 
 - [```main.cpp```](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/Process-Dynamics-Control/main.cpp): The main file of the application.
 
-Here's a nice visualization of how the program's mainloop functions, as a Chemical Engineering, a process flow diagram is perhaps the most fun thing to make:
+- [```olc_stub.cpp```](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/Process-Dynamics-Control/olc_stub.cpp): This is a stub for the olcPixelGameEngine which defines the ```OLC_PGE_APPLICATION``` to allow the header file to define certain static functions which would otherwise be redefined in every include.
+
+Here's a nice visualization of how the program's mainloop functions, as Chemical Engineers, a process flow diagram is perhaps the most fun thing to make:
 
 ![Program Process Flow Diagram](https://github.com/RelativisticMechanic/Process-Dynamics-Control/blob/main/pdc-program-pfd.png)
-
-## Part IV: Extending the project further
-
-This project can be extended a lot further. One could easily incorporate other kinds of systems into it, as both the TimePlot class and the RungeKutta4 differential equation solver are highly extendable. As I progress through this course, I shall add more systems other than just the Thermometer implementation.
 
 ## Part III: Compilation
 
@@ -81,3 +81,8 @@ The project can be compiled using Visual Studio 2022. Or one can also use [Emscr
 To compile for Emscripten, run:
 
 ```em++ ./main.cpp ./olc_stub.cpp ./TimePlot.cpp ./Graph2D.cpp ./RungeKutta4.cpp -std=c++17 -O0 -s ALLOW_MEMORY_GROWTH=1 -s MAX_WEBGL_VERSION=2 -s MIN_WEBGL_VERSION=2 -s USE_LIBPNG=1 -o index.html```
+
+## Part IV: Extending the project further
+
+This project can be extended a lot further. One could easily incorporate other kinds of systems into it, as both the TimePlot class and the RungeKutta4 differential equation solver are highly extendable. As I progress through this course, I shall add more systems other than just the Thermometer implementation.
+
