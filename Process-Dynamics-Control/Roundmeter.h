@@ -1,3 +1,5 @@
+/* WIP - A speedometer type indicator for single variable properties */
+
 #ifndef ROUNDMETER_H
 #define ROUNDMETER_H
 
