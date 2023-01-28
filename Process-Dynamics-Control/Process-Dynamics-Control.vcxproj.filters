@@ -33,6 +33,12 @@
     <ClCompile Include="Thermometer.h">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AllTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ThermometerApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="olcPixelGameEngine.h">
@@ -47,5 +53,14 @@
     <ClInclude Include="RungeKutta4.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Roundmeter.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drawArc.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

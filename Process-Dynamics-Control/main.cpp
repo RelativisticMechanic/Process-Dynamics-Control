@@ -2,73 +2,39 @@
 #include <cmath>
 
 #include "olcPixelGameEngine.h"
+#include "drawArc.h"
 #include "TimePlot.h"
 #include "RungeKutta4.h"
-#include "Thermometer.h"
+#include "ThermometerApp.cpp"
 
-class myApp : public olc::PixelGameEngine
+
+int main(int argc, char** argv)
 {
-public:
-	TimePlot thermometer_out;
-	TimePlot fluid_temperature;
-	Thermometer myThermometer;
+	ThermometerApp thermometer_demo;
 
-	// Default temperature of 310K
-	double default_temperature = 310;
-	// Amplitude of the sinusoidal input be 10 K
-	double sinusoidal_amplitude = 10;
+	const std::vector<std::string> SIMULATIONS_LIST = { "Thermometer" };
+	const std::vector<olc::PixelGameEngine*> SIMULATIONS = { &thermometer_demo };
 
-	// Some variables to track time
-	float s = 0;
-	int n = 0;
-	myApp()
+	std::cout << "Welcome to Process Dynamics and Control Simulations! Choose your simulation to run:" << std::endl;
+
+	for (int i = 0; i < SIMULATIONS_LIST.size(); i++)
 	{
-		sAppName = "Process Dynamics and Control";
+		std::cout <<  i + 1 << "] " << SIMULATIONS_LIST[i] << std::endl;
 	}
 
-	bool OnUserCreate() override
+	std::cout << "Choose which simulation to run: ";
+	int a = 0;
+	std::cin >> a;
+
+	if (a - 1 >= SIMULATIONS_LIST.size() || a - 1 < 0)
 	{
-		fluid_temperature = TimePlot(this, vec2(100, 50), vec2(400, 200), "Fluid Temperature", 300, 320, 60);
-		thermometer_out = TimePlot(this, vec2(100, 300), vec2(400, 200), "Thermometer", 300, 320, 60);
-		myThermometer = Thermometer(1.0, 310);
-		return true;
+		std::cout << "No such simulation exists. Quitting." << std::endl;
+		return 0;
 	}
-
-	bool OnUserUpdate(float elapsed) override
+	else
 	{
-		Clear(olc::BLACK);
-		DrawString(vec2(0, 0), "Press LMB to stop sinusoidal input", olc::WHITE, 2.0);
-		if (s > 0.1*n)
-		{
-			thermometer_out.PushData(s, myThermometer.temperature);
-			// If mouse button is held stop sinusoidal input
-			if (GetMouse(0).bHeld)
-			{
-				fluid_temperature.PushData(s, default_temperature);
-				myThermometer.Update(default_temperature, 0.1);
-			}
-			// If mouse button is released continue sinusoidal input
-			else
-			{
-				fluid_temperature.PushData(s, default_temperature + sinusoidal_amplitude * sin(s));
-				myThermometer.Update(default_temperature + sinusoidal_amplitude * sin(s), 0.1);
-			}
-			
-			n += 1;
-		}
-
-		s += elapsed;
-		fluid_temperature.Plot();
-		thermometer_out.Plot();
-		return true;
+		if (SIMULATIONS[a - 1]->Construct(800, 600, 1, 1))
+			SIMULATIONS[a - 1]->Start();
 	}
-};
-
-int main(void)
-{
-	myApp demo;
-	if (demo.Construct(800, 600, 1, 1))
-		demo.Start();
-
 	return 0;
 }
