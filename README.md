@@ -4,7 +4,7 @@
 
 # Process Dynamics Control
 
-This is a C++ application that implements a way to simulate and show process dynamics in C++. It was created in the January of 2023 by me as a way to understand the course [CH3310 (Process Dynamics and Control)](https://website.nitrkl.ac.in/Academics/AcademicDepartments/SyllabiDetails.aspx?d=Q0g6Q2hlbWljYWwgRW5naW5lZXJpbmc=-dmhpvpMkqIU=&di=Ng==-dYSTlPCIpzE=&c=Q2hlbWljYWwgRW5naW5lZXJpbmcgKEIuVGVjaC4gLSA0eXJzKQ==-Qpv4BN16nww=&t=VUc=-/CGGPdtU1IU=&s=NjgwNg%3d%3d-cO7ZMP8ekjo%3d).
+This is a C++ application that implements a way to simulate and show process dynamics in C++. 
 
 Currently, it implements a _Thermometer_ class, which can respond to temperature input and set its temperature accordingly. More will be described in the section below.
 
